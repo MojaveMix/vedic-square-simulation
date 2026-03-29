@@ -148,7 +148,7 @@ You can add screenshots or animations here.
 Example:
 
 ```md
-![Vedic Square](./screenshots/demo1.jpg)
+![Vedic Square](screenshots/demo1.jpg)
 ```
 
 ---
