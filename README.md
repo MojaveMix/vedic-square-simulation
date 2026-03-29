@@ -147,7 +147,7 @@ You can add screenshots or animations here.
 
 Example:
 
-```md
+```
 ![Vedic Square](https://raw.githubusercontent.com/MojaveMix/vedic-square-simulation/main/screenshots/demo1.jpg)
 ```
 
