@@ -55,7 +55,7 @@ The square reveals **repeating mathematical cycles and geometric symmetry**.
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/vedic-square-simulation.git
+git clone https://github.com/MojaveMix/vedic-square-simulation.git
 ```
 
 Enter the project directory:
