@@ -48,34 +48,7 @@ The square reveals **repeating mathematical cycles and geometric symmetry**.
 * **Vite**
 * **CSS / Tailwind (optional)**
 
----
 
-# 📂 Project Structure
-
-```
-vedic-square-simulation/
-│
-├── public/
-│
-├── src/
-│   ├── components/
-│   │   ├── VedicGrid.tsx
-│   │   ├── SquareCell.tsx
-│   │   └── Scene.tsx
-│   │
-│   ├── utils/
-│   │   ├── digitalRoot.ts
-│   │   └── generateVedicSquare.ts
-│   │
-│   ├── App.tsx
-│   └── main.tsx
-│
-├── package.json
-├── tsconfig.json
-└── README.md
-```
-
----
 
 # 🚀 Installation
 
