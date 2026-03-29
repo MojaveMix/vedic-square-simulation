@@ -147,9 +147,7 @@ You can add screenshots or animations here.
 
 Example:
 
-```
 ![Vedic Square](screenshots/demo1.jpg)
-```
 
 ---
 
