@@ -1,0 +1,6 @@
+projectKey=Vedic-sqaure
+serverUrl=http://localhost:9000
+serverVersion=26.3.0.120487
+dashboardUrl=http://localhost:9000/dashboard?id=Vedic-sqaure
+ceTaskId=6a45d7ac-e0d2-41e5-8493-f780545fb035
+ceTaskUrl=http://localhost:9000/api/ce/task?id=6a45d7ac-e0d2-41e5-8493-f780545fb035
