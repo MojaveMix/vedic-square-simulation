@@ -8,7 +8,12 @@ services:
       - "3000:80"
 
   frontend-tests:
-    build:
-      context: .
-      target: build # Use your build stage from Dockerfile
-    command: npm test
+    image: node:24
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: bash -c "npm install && npm test"
+    depends_on:
+      - frontend
+    environment:
+      - API_URL=http://frontend:80
