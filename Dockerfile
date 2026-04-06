@@ -1,19 +1,14 @@
-# Use Node image
-FROM node:20
+# Stage 1: Build the React app
+FROM node:24 AS build
 
 WORKDIR /app
-
-# Copy package files
 COPY package*.json ./
-
-# Install deps
 RUN npm install
-
-# Copy all code
 COPY . .
-
-# Build app
 RUN npm run build
 
-# Default command
-CMD ["npm", "run", "preview"]
+# Stage 2: Serve the app with Nginx
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 3000
+CMD ["nginx", "-g", "daemon off;"]
