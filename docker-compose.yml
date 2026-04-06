@@ -12,8 +12,5 @@ services:
     working_dir: /app
     volumes:
       - .:/app
-    command: bash -c "npm install && npm test"
-    depends_on:
-      - frontend
-    environment:
-      - API_URL=http://frontend:80
+    user: "${UID:-0}" # This will use your Windows user
+    command: npm test
