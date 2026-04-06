@@ -5,4 +5,4 @@ services:
     build: .
     container_name: vedic-app-frontend
     ports:
-      - "3000:80" # Map host 3000 -> container Nginx port 80
+      - "3000:80"
