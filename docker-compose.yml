@@ -1,8 +1,11 @@
 version: "3.9"
 
 services:
-  frontend:
-    build: .
-    container_name: vedic-app-frontend
-    ports:
-      - "3000:80"
+frontend:
+  build: .
+  ports:
+    - "3000:3000"
+  healthcheck:
+    test: ["CMD", "curl", "-f", "http://localhost:3000"]
+    interval: 5s
+    retries: 5
