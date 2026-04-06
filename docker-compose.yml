@@ -6,3 +6,13 @@ services:
     container_name: vedic-app-frontend
     ports:
       - "3000:80"
+
+  # Add this test service
+  frontend-tests:
+    build:
+      context: .
+      target: build # Use the build stage which has Node.js
+    container_name: vedic-app-tests
+    command: npm test
+    profiles:
+      - test # Only run this profile when testing
