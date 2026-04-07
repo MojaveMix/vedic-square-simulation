@@ -1,27 +1,16 @@
-version: "3.8"
+version: "3.9"
 
 services:
-  vedic-square:
+  frontend:
     build: .
-    image: vedic-square-image # ✅ FIXED IMAGE NAME
-    container_name: vedic-square-container # ✅ FIXED CONTAINER NAME
+    container_name: vedic-app-frontend
     ports:
       - "3000:80"
-    restart: unless-stopped
 
-  sonarqube:
-    image: sonarqube:community
-    container_name: sonarqube-container
-    ports:
-      - "9000:9000"
-    environment:
-      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+  frontend-tests:
+    image: node:24
+    working_dir: /app
     volumes:
-      - sonarqube_data:/opt/sonarqube/data
-      - sonarqube_logs:/opt/sonarqube/logs
-      - sonarqube_extensions:/opt/sonarqube/extensions
-
-volumes:
-  sonarqube_data:
-  sonarqube_logs:
-  sonarqube_extensions:
+      - .:/app
+    user: "${UID:-0}" # This will use your Windows user
+    command: npm test
