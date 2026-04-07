@@ -25,3 +25,4 @@ dist-ssr
 trivy.exe
 trivy-report.html
 trivy-report.json
+stable.txt
