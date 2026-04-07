@@ -3,13 +3,15 @@ version: "3.8"
 services:
   vedic-square:
     build: .
-    container_name: vedic-square-app
+    image: vedic-square-image # ✅ FIXED IMAGE NAME
+    container_name: vedic-square-container # ✅ FIXED CONTAINER NAME
     ports:
       - "3000:80"
     restart: unless-stopped
+
   sonarqube:
     image: sonarqube:community
-    container_name: sonarqube
+    container_name: sonarqube-container
     ports:
       - "9000:9000"
     environment:
