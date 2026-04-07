@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+trivy.exe
+trivy-report.html
+trivy-report.json
