@@ -3,6 +3,7 @@ version: "3.9"
 services:
   frontend:
     build: .
+    image: vedic-app-frontend:latest
     container_name: vedic-app-frontend
     ports:
       - "3000:80"

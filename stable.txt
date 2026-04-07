@@ -1,0 +1,129 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Pull Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/MojaveMix/vedic-square-simulation.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker-compose up --build -d frontend'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                // Run tests in separate container
+                bat 'docker-compose run --rm frontend-tests'
+            }
+        }
+
+
+    }
+
+    post {
+        always {
+            bat 'docker-compose down'
+        }
+    }
+}
+
+----> dockerfile :
+
+# Use Node image
+FROM node:20
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install deps
+RUN npm install
+
+# Copy all code
+COPY . .
+
+# Build app
+RUN npm run build
+
+# Default command
+CMD ["npm", "run", "preview"]
+
+
+
+-------> docker-compose.yml
+
+version: "3.9"
+
+services:
+  frontend:
+    build: .
+    container_name: vedic-app-frontend
+    ports:
+      - "3000:80"
+
+  frontend-tests:
+    image: node:24
+    working_dir: /app
+    volumes:
+      - .:/app
+    user: "${UID:-0}" # This will use your Windows user
+    command: npm test
+
+
+
+---> pipeline with SAST 
+
+pipeline {
+    agent any
+
+    environment {
+        SONAR_HOST_URL = 'http://192.168.40.10:9000'  // Replace with your SonarQube server URL
+        SONAR_LOGIN = credentials('retail-token')  // Store your SonarQube token in Jenkins credentials
+    }
+
+    stages {
+        stage('Pull Code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/MojaveMix/vedic-square-simulation.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker-compose up --build -d frontend'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                bat 'docker-compose run --rm frontend-tests'
+            }
+        }
+
+        stage('SonarQube Scan') {
+            steps {
+                // Run SonarScanner in Docker
+               bat """
+                    docker run --rm ^
+                        -v "%CD%:/usr/src" ^
+                        sonarsource/sonar-scanner-cli:latest ^
+                        -Dsonar.projectKey=vedic-app ^
+                        -Dsonar.sources=. ^
+                        -Dsonar.host.url=${SONAR_HOST_URL} ^
+                        -Dsonar.login=${SONAR_LOGIN}
+                    """
+            }
+        }
+    }
+
+    post {
+        always {
+            bat 'docker-compose down'
+        }
+    }
+}
