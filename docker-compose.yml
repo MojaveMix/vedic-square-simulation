@@ -6,7 +6,7 @@ services:
     image: vedic-app-frontend:latest
     container_name: vedic-app-frontend
     ports:
-      - "3000:4173"
+      - "3000:3000"
   frontend-tests:
     image: node:24
     working_dir: /app
