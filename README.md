@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="public/logo.svg" alt="Vedic Square 3D Logo" width="110" height="110" />
+
 # 🔮 Vedic Square 3D — Sacred Geometry & Digital Root Engine
 
 **An interactive, high-performance 3D mathematical visualization of the Vedic Square, modular arithmetic cycles ($\text{mod } 9$), and sacred geometric symmetries.**
@@ -176,7 +178,20 @@ This project is licensed under the **MIT License**.
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Created By **Badr Moujahid**
 
-Developed by **Badr Moujahid**  
+<div align="center">
+
+[![Portfolio Website](https://img.shields.io/badge/Portfolio-badr--moujahid.netlify.app-00D9F5?style=for-the-badge&logo=netlify&logoColor=black)](https://badr-moujahid.netlify.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-@MojaveMix-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MojaveMix)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Badr_Moujahid-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/badr-moujahid-54a118286/)
+[![Email](https://img.shields.io/badge/Email-badermouj%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:badermouj@gmail.com)
+
+</div>
+
+- 🌐 **Website / Portfolio:** [https://badr-moujahid.netlify.app/](https://badr-moujahid.netlify.app/)
+- 💻 **GitHub:** [https://github.com/MojaveMix](https://github.com/MojaveMix)
+- 🔗 **LinkedIn:** [https://www.linkedin.com/in/badr-moujahid-54a118286/](https://www.linkedin.com/in/badr-moujahid-54a118286/)
+- ✉️ **Email:** [badermouj@gmail.com](mailto:badermouj@gmail.com)
+
 If you enjoy exploring mathematical geometry with this simulation, consider giving the repository a ⭐ on GitHub!

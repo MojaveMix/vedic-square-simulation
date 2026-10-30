@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <radialGradient id="coreAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00D9F5" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#A855F7" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#05070e" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="primaryGrad" x1="15" y1="15" x2="105" y2="105" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00F5A0" />
+      <stop offset="50%" stop-color="#00D9F5" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+    <linearGradient id="complementGrad" x1="105" y1="15" x2="15" y2="105" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF5E7E" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+    <filter id="neonGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer Rounded Hex-Tech Frame -->
+  <rect x="6" y="6" width="108" height="108" rx="28" fill="#070a14" stroke="url(#primaryGrad)" stroke-width="2.5" />
+  <circle cx="60" cy="60" r="50" fill="url(#coreAura)" />
+
+  <!-- Sacred Mandala Outer Ring -->
+  <circle cx="60" cy="60" r="44" stroke="url(#primaryGrad)" stroke-width="1.2" stroke-opacity="0.4" stroke-dasharray="4 3" />
+  <circle cx="60" cy="60" r="36" stroke="url(#complementGrad)" stroke-width="1" stroke-opacity="0.3" />
+
+  <!-- Subtle 9x9 Vedic Matrix Grid Lines -->
+  <g stroke="#94a3b8" stroke-opacity="0.12" stroke-width="1">
+    <line x1="36" y1="20" x2="36" y2="100" />
+    <line x1="60" y1="20" x2="60" y2="100" />
+    <line x1="84" y1="20" x2="84" y2="100" />
+    <line x1="20" y1="36" x2="100" y2="36" />
+    <line x1="20" y1="60" x2="100" y2="60" />
+    <line x1="20" y1="84" x2="100" y2="84" />
+  </g>
+
+  <!-- Primary Vedic Diamond Constellation -->
+  <polygon
+    points="60,16 104,60 60,104 16,60"
+    stroke="url(#primaryGrad)"
+    stroke-width="3"
+    stroke-linejoin="round"
+    fill="#00D9F5"
+    fill-opacity="0.06"
+    filter="url(#neonGlow)"
+  />
+
+  <!-- Complementary Vedic Rotated Square (Octagram) -->
+  <polygon
+    points="29,29 91,29 91,91 29,91"
+    stroke="url(#complementGrad)"
+    stroke-width="2.8"
+    stroke-linejoin="round"
+    fill="#EC4899"
+    fill-opacity="0.06"
+    filter="url(#neonGlow)"
+  />
+
+  <!-- Internal Star Mandala Chords -->
+  <g stroke-width="1.5" stroke-opacity="0.7">
+    <line x1="29" y1="29" x2="91" y2="91" stroke="url(#primaryGrad)" />
+    <line x1="91" y1="29" x2="29" y2="91" stroke="url(#complementGrad)" />
+    <line x1="60" y1="16" x2="60" y2="104" stroke="url(#primaryGrad)" stroke-dasharray="3 3" />
+    <line x1="16" y1="60" x2="104" y2="60" stroke="url(#primaryGrad)" stroke-dasharray="3 3" />
+  </g>
+
+  <!-- Central Sacred Octahedron Crystal -->
+  <polygon
+    points="60,42 78,60 60,78 42,60"
+    fill="url(#primaryGrad)"
+    fill-opacity="0.25"
+    stroke="#ffffff"
+    stroke-width="2"
+    filter="url(#neonGlow)"
+  />
+  <circle cx="60" cy="60" r="5.5" fill="#ffffff" filter="url(#neonGlow)" />
+
+  <!-- Glowing Constellation Vertex Nodes -->
+  <circle cx="60" cy="16" r="4" fill="#00F5A0" stroke="#ffffff" stroke-width="1.2" />
+  <circle cx="104" cy="60" r="4" fill="#00D9F5" stroke="#ffffff" stroke-width="1.2" />
+  <circle cx="60" cy="104" r="4" fill="#6366F1" stroke="#ffffff" stroke-width="1.2" />
+  <circle cx="16" cy="60" r="4" fill="#00D9F5" stroke="#ffffff" stroke-width="1.2" />
+
+  <circle cx="29" cy="29" r="3.5" fill="#FF5E7E" stroke="#ffffff" stroke-width="1" />
+  <circle cx="91" cy="29" r="3.5" fill="#F59E0B" stroke="#ffffff" stroke-width="1" />
+  <circle cx="91" cy="91" r="3.5" fill="#EC4899" stroke="#ffffff" stroke-width="1" />
+  <circle cx="29" cy="91" r="3.5" fill="#F59E0B" stroke="#ffffff" stroke-width="1" />
+</svg>
